@@ -1,0 +1,12 @@
+{% extends "layout.html" %}
+
+{% block title %} Song a Day {% endblock %}
+
+{% block content %}
+    <div class="home-body">
+        <h1>Rogue Middle Child Presents:</h1>
+        <h2>Song a Day</h2>
+        <p>An adventure in Python and Django</p>
+        <p id="enter"><a href="{% url 'songs:list' %}">Enter Here</a></p>
+    </div>
+{% endblock %}

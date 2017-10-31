@@ -1,0 +1,13 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<div class="margin-center">
+
+  <p>Title: {{ song.title}}</p>
+  <p>Artist: {{ song.artist}}</p>
+  <p>Date: {{ song.composition_date}}</p>
+
+  <!-- Navigation back to list view -->
+  <a id="detail-button" href="{% url 'songs:list' %}">Back to the list!</a>
+</div>
+{% endblock %}

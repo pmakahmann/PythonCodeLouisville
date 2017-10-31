@@ -1,0 +1,43 @@
+<!-- Table for addition of new songs to database. -->
+{% extends "layout.html" %}
+{% load static from staticfiles %}
+
+
+{% block content %}
+<!-- Link for adding new song, routes to CreateView -->
+<h3 id="new-song"><a href="{% url 'songs:create' %}">Add a New Song</a></h3>
+
+<!--   ListView currently set up as table for easier formatting.  Could use
+       CSS Grid later.  -->
+<table>
+    <tr>
+        <th>Title</th>
+        <th>Artist</th>
+        <th>Date</th>
+        <th>Edit</th>
+        <th>Delete</th>
+    </tr>
+
+    <!-- for loop do display all songs in database -->
+    {% for song in songs %}
+        <tr>
+            <td>{{ song.title }}</td>
+            <td>{{ song.artist }}</td>
+            <td>{{ song.composition_date }}</td>
+            <td>
+              <a href="{% url 'songs:update' pk=song.pk %}">
+                <!-- Inline styling, I know, terrible right?!  To be fixed at a later date -->
+                <img style="width:25px; height: 25px; padding-left: 3px;" src="{% static 'img/edit-icon.png' %}" />
+              </a>
+            </td>
+            <td>
+              <a href="{% url 'songs:delete' pk=song.pk %}">
+                <img style="width:25px; height: 25px; padding-left: 3px;" src="{% static 'img/delete-icon.png' %}" />
+              </a>
+            </td>
+        </tr>
+    {% endfor %}
+
+</table>
+
+{% endblock %}

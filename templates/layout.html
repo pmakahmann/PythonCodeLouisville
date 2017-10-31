@@ -1,0 +1,38 @@
+<!-- Basic layout to be extended by home and app layout-->
+<!doctype html>
+{% load static from staticfiles %}
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport">
+        <title>{% block title %}{% endblock %}</title>
+        <link rel="stylesheet" href="{% static 'css/layout.css' %}">
+        <!-- Added block for any future css to be added -->
+        {% block css %}{% endblock %}
+    </head>
+
+    <body>
+    <div class="page-wrap">
+          <header class="main-header">
+            <h2 class="main-logo">Song a Day:</h2>
+            <h2 class="main-nav"><a href="{% url 'songs:list' %}">Song List</a></h2>
+          </header>
+        <div class="body">
+
+
+    {% block content %}{% endblock %}
+        </div>
+    </div>
+
+    <footer class="site-footer">
+
+      <div>
+          <p>&copy; 2017 Rogue Middle Child</p>
+
+
+      </div>
+
+    </footer>
+
+  </body>
+</html>

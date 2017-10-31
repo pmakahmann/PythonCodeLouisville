@@ -1,0 +1,15 @@
+<!-- POST action form for submitting new song to database -->
+{% extends "layout.html" %}
+
+{% block content %}
+<div class="form">
+    {{ block.super }}
+    <h1>{{ form.instance.title|default:"Add a New Song" }}</h1>
+    <form method="POST" action="">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" class="button save" value="Save"> <a href="{% url 'songs:list' %}">Cancel</a>
+    </form>
+</div>
+
+{% endblock %}

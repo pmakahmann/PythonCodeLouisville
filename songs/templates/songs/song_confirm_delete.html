@@ -1,0 +1,13 @@
+<!-- Asks user if they really want to delete the song from the database. -->
+{% extends "layout.html" %}
+
+{% block content %}
+<div class="margin-center">
+	<h1>Delete {{ song.title }} by {{ song.artist }}?</h1>
+
+	<form method='POST'>
+		{% csrf_token %}
+		<input type="submit" class="button delete" value="Delete"> <a href="{% url 'songs:list' %}">Cancel</a>
+	</form>
+</div>
+{% endblock %}
