@@ -13,11 +13,13 @@ included here:
 
 https://www.python.org/downloads/
 
+***For the following instructions, Windows users are required to check the box to "install Python to PATH" during installation***
+
 https://www.djangoproject.com/download/
 
 2. Clone or download the project files onto your local computer.
 
-3. Navigate to the directory in your command interface ( ../../../CL_Project)
+3. Navigate to the directory in your command interface ( ../../../PythonCodeLouisville)
 
 4. Run the following command: python manage.py runserver (or python3 manage.py runserver)
 
