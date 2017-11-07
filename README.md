@@ -1,4 +1,4 @@
-# CL_Project
+# PythonCodeLouisville
 Python project for Code Louisville September 2017 - A "Song of the Day" catalog
 
 Purpose:
